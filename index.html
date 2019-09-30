@@ -4,17 +4,24 @@
 <H1>我叫<span id="myname"></span></h1>
     <p>我的学号是<span id ="mynumber"></span>
     </p>
-        
+    <button id="btu">下一个</button><br>
     <img src="matrix.png" style="border-radius: 40px 40px 40px 40px">
-    
+    <img src="Penguins.jpg" alt="">
     <script src="jquery-3.4.1.js"></script>
     <script>
     $(function(){
         $.get("data.json",function(result){
             $("#myname").text(result.myname);
             $("#mynumber").text(result.mynumber);
+        })
+
+        $("#btu").click(function(){
+            $.get("data1.json",function(result){
+            $("#myname").text(result.myname);
+            $("#mynumber").text(result.mynumber);
         });
-    });
+    })
+})
     </script>
 </body>
 </html>
